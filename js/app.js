@@ -46,8 +46,10 @@ let Player = function(x_init, y_init) {
 };
 
 //player update method.
-Player.prototype.update = function() {
-
+Player.prototype.update = function(new_x,new_y) {
+    //update player position.
+    this.x = new_x;
+    this.y = new_y;
 };
 
 //player render method
