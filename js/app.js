@@ -59,7 +59,7 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(move) {
     switch(move) {
         case "left": {
-            if(this.x - 101 < 0) return;
+            if(this.x - 101 < 0 ) return;
             this.x -= 101;
             this.render();
             break;
@@ -71,6 +71,9 @@ Player.prototype.handleInput = function(move) {
             break;
         }
         case "right": {
+            if(this.x + 101 >= 505) return;
+            this.x += 101;
+            this.render();
             break;
         }
     }
