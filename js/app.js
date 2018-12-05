@@ -53,7 +53,7 @@ Player.prototype.update = function() {
 //player render method
 
 Player.prototype.render = function() {
-
+    ctx.drawImage(Resources.get(this.player), this.x, this.y);
 };
 
 //input handling for player
