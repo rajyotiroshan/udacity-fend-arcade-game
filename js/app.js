@@ -64,10 +64,20 @@ Player.prototype.handleInput = function(move) {
             this.render();
             break;
         }
-        case "down": {
+        case "up": {
+            this.y -= 83;
+            this.render();
+            if(this.y < 0 ){
+                window.alert("Game over!you did it.");
+                //re-position player to init position.
+                this.x = 202;
+                this.y = 415;
+                return;
+            }
+            
             break;
         }
-        case "left": {
+        case "down": { 
             break;
         }
         case "right": {
