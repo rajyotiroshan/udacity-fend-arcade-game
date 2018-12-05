@@ -78,6 +78,11 @@ Player.prototype.handleInput = function(move) {
             break;
         }
         case "down": { 
+            if(this.y+83 >= 498) {//do not let player go below off canvas.
+                return;
+            }
+            this.y += 83;
+            this.render();
             break;
         }
         case "right": {
