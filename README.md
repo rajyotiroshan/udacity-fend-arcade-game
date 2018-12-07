@@ -1,20 +1,35 @@
 # Classic Arcade Game Clone Project
 
 ## Table of Contents
-
+- [About](#About)
 - [Instructions](#instructions)
+- [languages](#languages)
 - [Contributing](#contributing)
+
+## About
+
+This is a required project for udacity front end nanodegree program certification. This showcases the knowledge of developing project using object oriented approach in javascript language.
+It is developed by cloning the project (https://github.com/udacity/frontend-nanodegree-arcade-game.git) provided by udacity. 
 
 ## Instructions
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+1. How to run?
+	
+	clone the project using git cli by running cmd  (git clone https://github.com/rajyotiroshan/udacity-fend-arcade-game.git)
+	Then open index.html file in browser.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+2. How to play?
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
+	you have to move boy-look-like player at bottom row to upper row (water look like).
+	if you touch any of those bugs coming from left side, the game restarts and the player will again be respositioned to bottom row.  
+	Use left/right/up/bottom key stroke to escape the bugs.
+	mentioned keystroke moves the player in the direction as the name specify.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## languages 
+
+	This project is developed using html5, css3 and javascript(no external library is used).
+
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+For contribution clone this repo and make issues.
