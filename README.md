@@ -20,7 +20,7 @@ It is developed by cloning the project (https://github.com/udacity/frontend-nano
 
 2. How to play?
 
-	you have to move boy-look-like player at bottom row to upper row (water look like).
+	you have to move boy-look-like player at bottom row to top row (water look like).
 	if you touch any of those bugs coming from left side, the game restarts and the player will again be respositioned to bottom row.  
 	Use left/right/up/bottom key stroke to escape the bugs.
 	mentioned keystroke moves the player in the direction as the name specify.
