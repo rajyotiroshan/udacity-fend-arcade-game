@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y,s) {
+var Enemy = function(x,y,r,s) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -10,6 +10,8 @@ var Enemy = function(x,y,s) {
     this.x = x;
     //y-position of enemy.
     this.y = y;
+    //enemy row.
+    this.row = r;
     this.speedMultiplier = s; 
 };
 
@@ -35,11 +37,13 @@ Enemy.prototype.render = function() {
 
 //Player
 
-let Player = function(x_init, y_init) {
+let Player = function(x_init, y_init, r) {
     //x-coordinate for player
     //set initial possition
     this.x = x_init;
     this.y = y_init;
+    //row position.
+    this.row = r;
     //player image
     this.sprite = 'images/char-boy.png';
 
@@ -49,6 +53,25 @@ let Player = function(x_init, y_init) {
 Player.prototype.update = function() {
     //update player position.
 };
+
+/*//check for possible collision with enemy.
+let checkCollision  = function(){
+    switch(player.row) {
+        case 3 : {
+            console.log("3 rd row");
+            break;
+        }
+        case 2 : {
+            console.log("2nd row");
+            break;
+        }
+        case 1 : {
+            console.log("1st row");
+            break;
+        } 
+    }
+}
+*/
 
 //player render method
 Player.prototype.render = function() {
@@ -61,18 +84,16 @@ Player.prototype.handleInput = function(move) {
         case "left": {
             if(this.x - 101 < 0 ) return;
             this.x -= 101;
-            this.render();
             break;
         }
         case "up": {
             this.y -= 83;
-            this.render();
+            this.row--;
             if(this.y < 0 ){
-                window.alert("Game over!you did it.");
                 //re-position player to init position.
                 this.x = 202;
                 this.y = 415;
-                return;
+                this.row = 5;
             }
             
             break;
@@ -82,13 +103,12 @@ Player.prototype.handleInput = function(move) {
                 return;
             }
             this.y += 83;
-            this.render();
+            this.row++;
             break;
         }
         case "right": {
             if(this.x + 101 >= 505) return;
             this.x += 101;
-            this.render();
             break;
         }
     }
@@ -98,10 +118,10 @@ Player.prototype.handleInput = function(move) {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-let allEnemies = [new Enemy(-101,60,200), new Enemy(-101,143,300), new Enemy(-101,226,400)];
+let allEnemies = [new Enemy(0,60,1,200), new Enemy(0,143,2,300), new Enemy(0,226,3,400)];
 
 // Place the player object in a variable called player
-let player = new Player(202,415);
+let player = new Player(202,415,5);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
