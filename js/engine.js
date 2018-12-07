@@ -105,7 +105,12 @@ var Engine = (function(global) {
         if(!enemy) {return;}
         console.log(enemy.x);
         //check for horiszontal space.
-        if(player.x <= enemy.x + 101 && player.x + 101 >= enemy.x) {
+        if(player.x < enemy.x + 101 && 
+            player.x + 101 > enemy.x &&
+            player.y < enemy.y+83 && 
+            player.y + 83 > enemy.y) 
+            {//collision occurrs .
+                //reset player to starting position.
             player.x = 202;
             player.y = 415;
             player.row = 5;

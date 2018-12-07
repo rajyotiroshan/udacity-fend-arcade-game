@@ -82,20 +82,22 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(move) {
     switch(move) {
         case "left": {
-            if(this.x - 101 < 0 ) return;
+            if(this.x - 101 < 0 ) return;//donot let go player left off canvas.
             this.x -= 101;
             break;
         }
-        case "up": {
+        case "up": { 
             this.y -= 83;
             this.row--;
-            if(this.y < 0 ){
-                //re-position player to init position.
-                this.x = 202;
-                this.y = 415;
-                this.row = 5;
+            let nextRow = this.row -1;
+            if(nextRow == -1){
+                setTimeout(function(){
+                    alert("you did it!");
+                    player.x = 202;
+                    player.y = 415;
+                    player.row = 5;
+                },100);
             }
-            
             break;
         }
         case "down": { 
